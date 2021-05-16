@@ -1,0 +1,85 @@
+body{
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+.container{
+    margin: 20px;
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 220, 187);
+    border-radius: 40px;
+    padding: 20px;
+}
+.inputTitle{
+    font-size: 30px;
+}
+.container > input {
+    font-size: 20px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 10px 0;
+    outline: none;
+    width: 80%;
+    background-color: white;
+}
+.container > button {
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: rgb(255,255,255);
+    outline: none;
+}
+.container > button:hover{
+    background-color: rgb(243, 243, 243);
+}
+.container > button:active{
+    background-color: rgb(255,255,255);
+}
+
+.error{
+    font-size: 30px;
+}
+.information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    background-color: rgb(187, 255, 241);
+    border-radius: 40px;
+    padding: 20px;
+    margin-top: 10px;
+    transition: all 0.5s;
+    transform: translateY(-200%);
+    animation: appear forwards 0.5s;
+}
+.informationTitle{
+    margin-bottom: 10px;
+    font-size: 30px !important;
+    font-weight: 700;
+    border-bottom: 2px rgb(0, 0, 0) solid;
+}
+.informationElement{
+    font-size: 25px;
+}
+@keyframes appear {
+    0%{
+        transform: translateY(-200%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
