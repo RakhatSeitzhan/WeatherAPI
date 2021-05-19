@@ -1,5 +1,8 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
 body{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(39, 48, 77);
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -8,23 +11,20 @@ body{
     justify-content: center;
     flex-direction: column;
 }
-*{
-    font-family: 'Open Sans', sans-serif;
-}
 .container{
     margin: 20px;
-    width: 80%;
+    width: 40%;
     height: 60%;
-    display: flex;
-    flex-direction: column;
+    display: flex;    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(255, 220, 187);
+    background-color: rgb(0, 1, 39);
     border-radius: 40px;
     padding: 20px;
 }
 .inputTitle{
     font-size: 30px;
+    color: white;
 }
 .container > input {
     font-size: 20px;
@@ -35,6 +35,7 @@ body{
     outline: none;
     width: 80%;
     background-color: white;
+    text-align: center;
 }
 .container > button {
     font-size: 20px;
@@ -44,7 +45,7 @@ body{
     outline: none;
 }
 .container > button:hover{
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(240, 240, 240);
 }
 .container > button:active{
     background-color: rgb(255,255,255);
@@ -53,33 +54,109 @@ body{
 .error{
     font-size: 30px;
 }
-.information{
+
+.current-and-daily{
+    width: 80%;
+    display: flex;
+    opacity: 0;
+}
+.current{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-    background-color: rgb(187, 255, 241);
-    border-radius: 40px;
+    background-color: rgb(0, 1, 39);
+    border-radius: 30px;
+    flex:3;
     padding: 20px;
-    margin-top: 10px;
-    transition: all 0.5s;
-    transform: translateY(-200%);
-    animation: appear forwards 0.5s;
 }
-.informationTitle{
+.current-title{
+    color: white;
     margin-bottom: 10px;
     font-size: 30px !important;
     font-weight: 700;
     border-bottom: 2px rgb(0, 0, 0) solid;
 }
-.informationElement{
-    font-size: 25px;
+.current-container{
+    display: flex;
+    align-items: center;
 }
+.current-temp{
+    color: white;
+    font-size: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#current-temp-img{
+    width: 200px;
+    color: black;
+}
+#current-temp{
+    transform: translateY(-20%);
+}
+.current-inf-container {
+    margin-left: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.current-inf{
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+.current-inf-icon{
+    width: 30px;
+    height: 30px;
+    margin-right: 15px
+}
+.daily2 {
+    color: white;
+    background-color: rgb(0, 1, 39);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    flex: 2;
+    padding: 10px;
+    margin-left: 10px;
+}
+.daily-item{
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+.day-name{
+    width:60px;
+}
+.day-icon{
+    height: 60px;
+}
+.day-max, .day.min{
+    margin: 0 15px;
+}
+
+#fail{
+    display: none;
+    padding: 10px 20px;
+    position: absolute;
+    background-color: rgb(255, 215, 215);
+    color: rgb(0, 1, 39);
+    font-size: 50px;
+    border-radius: 30px;
+    animation: appear forwards 0.5s;
+}
+
 @keyframes appear {
     0%{
+        opacity: 0;
         transform: translateY(-200%);
     }
     100%{
+        opacity: 1;
         transform: translateY(0%);
     }
 }
