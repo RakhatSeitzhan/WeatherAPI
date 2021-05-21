@@ -1,7 +1,7 @@
 const appid = 'b3978073fde497af532c970fab90ccc0' 
 const button = document.getElementById('button') 
 const inputElement = document.getElementById('input') 
-
+const failElement = document.getElementById('fail')
 function main(){
     const city = inputElement.value
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}&units=metric`)
@@ -22,10 +22,10 @@ function main(){
 }
 
 function showFailElement(){
-    document.getElementById('fail').style.display = 'inline'
+    failElement.classList.add('animate')
 }
 function hideFailElement(){
-    document.getElementById('fail').style.display = 'none'
+    //document.getElementById('fail').style.display = 'none'
 }
 
 function setCurrentWeather(current){
@@ -61,7 +61,6 @@ function setDailyWeather(lat, lon){
                         maxElements[i].innerHTML = Math.round(info.daily[i].temp.day)
                         minElements[i].innerHTML = Math.round(info.daily[i].temp.night)
                     }
-
                 })
             else {
                 showFailElement()
@@ -71,3 +70,6 @@ function setDailyWeather(lat, lon){
 }
 
 button.addEventListener('click', e=> main())
+failElement.onanimationend = () =>{
+    failElement.classList.remove('animate')
+}

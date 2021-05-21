@@ -140,16 +140,37 @@ body{
 }
 
 #fail{
-    display: none;
     padding: 10px 20px;
     position: absolute;
     background-color: rgb(255, 215, 215);
     color: rgb(0, 1, 39);
     font-size: 50px;
     border-radius: 30px;
-    animation: appear forwards 0.5s;
+    pointer-events: none;
+    opacity: 0;
+}
+.animate{
+    animation: appearFail forwards 2s;
 }
 
+@keyframes appearFail {
+    0%{
+        opacity: 0;
+        transform: translateY(-200%);
+    }
+    25%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    75%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-200%);
+    }
+}
 @keyframes appear {
     0%{
         opacity: 0;
